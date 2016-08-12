@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- AppBar 布局 -->
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="256dp"
+        android:fitsSystemWindows="true">
+
+        <!-- 这里面写的是可折叠的 Toolbar 布局, 其中包括自定义的, 以及 最实用的Toolbar -->
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="#30469b"
+            app:expandedTitleMarginStart="58dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.7"
+                android:layout_height="match_parent" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                />
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nsv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <TextView
+            android:textSize="56sp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="mashihao"
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+             />
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+</android.support.design.widget.CoordinatorLayout>
